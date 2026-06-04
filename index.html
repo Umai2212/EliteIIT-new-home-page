@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Elite IIT – Best Coaching in Bangalore | JEE, NEET, CET</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0a1f5c;
+    --navy-light: #1a3275;
+    --orange: #ff6b00;
+    --orange-light: #ff8c00;
+    --yellow: #ffd200;
+    --white: #ffffff;
+    --off-white: #f5f7ff;
+    --light-gray: #eef1f8;
+    --text-dark: #0d1b40;
+    --text-mid: #3a4a7a;
+    --text-light: #6b7cb0;
+    --green: #00b96b;
+    --red: #e8002a;
+    --shadow-sm: 0 2px 12px rgba(10,31,92,0.08);
+    --shadow-md: 0 6px 28px rgba(10,31,92,0.13);
+    --shadow-lg: 0 12px 48px rgba(10,31,92,0.18);
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Poppins',sans-serif;background:#fff;color:var(--text-dark);overflow-x:hidden;}
+
+  /* ── STICKY HEADER ── */
+  .header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1.5px solid #e8ecf8;box-shadow:var(--shadow-sm);}
+  .header-top{background:var(--navy);padding:6px 0;text-align:center;font-size:12px;color:#fff;font-family:'Nunito',sans-serif;font-weight:600;letter-spacing:0.03em;}
+  .header-top span{color:var(--yellow);}
+  .header-main{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .logo-icon{width:44px;height:44px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-weight:900;font-size:14px;color:var(--yellow);letter-spacing:-0.5px;}
+  .logo-text{font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;color:var(--navy);line-height:1.1;}
+  .logo-text span{color:var(--orange);display:block;font-size:11px;font-weight:700;letter-spacing:0.05em;}
+  nav{display:flex;align-items:center;gap:4px;}
+  nav a{font-size:13px;font-weight:600;color:var(--text-mid);padding:6px 12px;border-radius:8px;text-decoration:none;transition:all .2s;}
+  nav a:hover{background:var(--off-white);color:var(--navy);}
+  nav a.active{color:var(--orange);}
+  .header-cta{display:flex;align-items:center;gap:10px;}
+  .btn-call{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--navy);border:1.5px solid var(--navy);padding:8px 14px;border-radius:8px;text-decoration:none;transition:all .2s;}
+  .btn-call:hover{background:var(--navy);color:#fff;}
+  .btn-primary{background:var(--orange);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(255,107,0,0.3);}
+  .btn-primary:hover{background:var(--orange-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(255,107,0,0.4);}
+
+  /* ── HERO ── */
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,#1a3275 50%,#0d2a6b 100%);min-height:580px;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+  .hero-inner{max-width:1200px;margin:0 auto;padding:48px 24px;display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,210,0,0.15);border:1px solid rgba(255,210,0,0.4);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;color:var(--yellow);margin-bottom:16px;letter-spacing:0.04em;}
+  .hero-badge::before{content:'🏆';}
+  .hero-title{font-family:'Nunito',sans-serif;font-size:46px;font-weight:900;color:#fff;line-height:1.12;margin-bottom:8px;}
+  .hero-title span{color:var(--yellow);}
+  .hero-subtitle{font-size:16px;color:rgba(255,255,255,0.75);margin-bottom:24px;font-weight:400;line-height:1.6;}
+  .hero-bullets{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+  .hero-bullet{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.9);font-weight:500;}
+  .hero-bullet::before{content:'✓';width:22px;height:22px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0;}
+  .hero-stats{display:flex;gap:24px;margin-bottom:28px;}
+  .hero-stat{text-align:center;}
+  .hero-stat-num{font-family:'Nunito',sans-serif;font-size:28px;font-weight:900;color:var(--yellow);line-height:1;}
+  .hero-stat-lbl{font-size:11px;color:rgba(255,255,255,0.6);margin-top:2px;}
+  .hero-actions{display:flex;gap:12px;align-items:center;}
+  .btn-hero-primary{background:var(--orange);color:#fff;font-size:15px;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;box-shadow:0 6px 20px rgba(255,107,0,0.4);}
+  .btn-hero-primary:hover{background:#ff8c00;transform:translateY(-2px);}
+  .btn-hero-secondary{background:rgba(255,255,255,0.12);color:#fff;font-size:15px;font-weight:600;padding:14px 24px;border-radius:10px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.3);transition:all .2s;}
+  .btn-hero-secondary:hover{background:rgba(255,255,255,0.2);}
+
+  /* ── ENQUIRY FORM (hero right) ── */
+  .hero-form{background:#fff;border-radius:var(--radius-lg);padding:28px 24px;box-shadow:var(--shadow-lg);}
+  .form-title{font-family:'Nunito',sans-serif;font-size:20px;font-weight:800;color:var(--navy);margin-bottom:4px;}
+  .form-subtitle{font-size:13px;color:var(--text-light);margin-bottom:20px;}
+  .form-group{margin-bottom:14px;}
+  .form-group label{display:block;font-size:12px;font-weight:600;color:var(--text-mid);margin-bottom:5px;}
+  .form-group input,.form-group select{width:100%;padding:11px 14px;border:1.5px solid #dde3f5;border-radius:8px;font-size:14px;font-family:'Poppins',sans-serif;color:var(--text-dark);background:#fff;outline:none;transition:border-color .2s;}
+  .form-group input:focus,.form-group select:focus{border-color:var(--navy);}
+  .form-group select{cursor:pointer;}
+  .form-submit{width:100%;background:var(--orange);color:#fff;font-size:15px;font-weight:700;padding:14px;border:none;border-radius:10px;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(255,107,0,0.35);font-family:'Poppins',sans-serif;margin-top:4px;}
+  .form-submit:hover{background:#ff8c00;transform:translateY(-1px);}
+  .form-note{text-align:center;font-size:11px;color:var(--text-light);margin-top:10px;}
+  .form-note span{color:var(--green);font-weight:600;}
+
+  /* ── TOPPERS STRIP ── */
+  .toppers-strip{background:var(--yellow);padding:14px 0;overflow:hidden;}
+  .toppers-inner{max-width:1200px;margin:0 auto;padding:0 24px;}
+  .toppers-title{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--navy);text-align:center;margin-bottom:12px;letter-spacing:0.05em;text-transform:uppercase;}
+  .toppers-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+  .topper-chip{background:#fff;border-radius:40px;padding:6px 14px 6px 6px;display:flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+  .topper-avatar{width:34px;height:34px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--yellow);}
+  .topper-info{line-height:1.2;}
+  .topper-name{font-size:11px;font-weight:700;color:var(--navy);}
+  .topper-rank{font-size:11px;font-weight:800;color:var(--orange);}
+
+  /* ── SECTION WRAPPER ── */
+  .section{padding:60px 0;}
+  .section-alt{background:var(--off-white);}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+  .section-tag{display:inline-block;background:rgba(255,107,0,0.1);color:var(--orange);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px;}
+  .section-title{font-family:'Nunito',sans-serif;font-size:32px;font-weight:900;color:var(--navy);margin-bottom:8px;line-height:1.2;}
+  .section-subtitle{font-size:15px;color:var(--text-light);margin-bottom:36px;max-width:560px;}
+  .section-header{text-align:center;margin-bottom:40px;}
+  .section-header .section-subtitle{margin:0 auto 0;}
+
+  /* ── TRUST BAR ── */
+  .trust-bar{background:#fff;padding:24px 0;border-bottom:1px solid #eef1f8;}
+  .trust-items{display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:wrap;}
+  .trust-item{display:flex;align-items:center;gap:10px;padding:10px 28px;border-right:1px solid #eef1f8;}
+  .trust-item:last-child{border-right:none;}
+  .trust-icon{font-size:24px;}
+  .trust-num{font-family:'Nunito',sans-serif;font-size:22px;font-weight:900;color:var(--navy);line-height:1;}
+  .trust-lbl{font-size:11px;color:var(--text-light);font-weight:500;}
+
+  /* ── COURSES ── */
+  .courses-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .course-card{background:#fff;border:1.5px solid #e8ecf8;border-radius:var(--radius);padding:20px;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;}
+  .course-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);transform:scaleX(0);transition:transform .25s;}
+  .course-card:hover{border-color:var(--orange);box-shadow:var(--shadow-md);transform:translateY(-3px);}
+  .course-card:hover::before{transform:scaleX(1);}
+  .course-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:12px;}
+  .course-name{font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;color:var(--navy);margin-bottom:4px;}
+  .course-desc{font-size:12px;color:var(--text-light);line-height:1.5;margin-bottom:12px;}
+  .course-link{font-size:12px;font-weight:700;color:var(--orange);text-decoration:none;display:flex;align-items:center;gap:4px;}
+  .course-link::after{content:'→';}
+
+  /* ── WHY ELITE ── */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .why-card{background:#fff;border-radius:var(--radius-lg);padding:24px;border:1.5px solid #e8ecf8;transition:all .25s;}
+  .why-card:hover{box-shadow:var(--shadow-md);border-color:rgba(255,107,0,0.3);}
+  .why-num{font-family:'Nunito',sans-serif;font-size:42px;font-weight:900;color:rgba(10,31,92,0.07);line-height:1;margin-bottom:-8px;}
+  .why-title{font-family:'Nunito',sans-serif;font-size:17px;font-weight:800;color:var(--navy);margin-bottom:8px;}
+  .why-desc{font-size:13px;color:var(--text-light);line-height:1.6;}
+
+  /* ── TOPPERS SECTION ── */
+  .toppers-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .topper-card{background:#fff;border-radius:var(--radius);padding:16px;text-align:center;border:1.5px solid #e8ecf8;transition:all .25s;}
+  .topper-card:hover{box-shadow:var(--shadow-md);border-color:var(--yellow);}
+  .topper-photo{width:64px;height:64px;border-radius:50%;margin:0 auto 10px;object-fit:cover;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-size:20px;font-weight:900;color:var(--yellow);}
+  .topper-card-name{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:2px;}
+  .topper-card-exam{font-size:11px;color:var(--text-light);margin-bottom:6px;}
+  .topper-card-rank{background:var(--yellow);color:var(--navy);font-size:12px;font-weight:800;padding:3px 10px;border-radius:20px;display:inline-block;}
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .testi-card{background:#fff;border-radius:var(--radius-lg);padding:24px;border:1.5px solid #e8ecf8;position:relative;}
+  .testi-quote{font-size:36px;color:var(--yellow);line-height:1;margin-bottom:8px;font-family:Georgia,serif;}
+  .testi-text{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;}
+  .testi-author{display:flex;align-items:center;gap:10px;}
+  .testi-avatar{width:40px;height:40px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--yellow);font-family:'Nunito',sans-serif;flex-shrink:0;}
+  .testi-name{font-size:13px;font-weight:700;color:var(--navy);}
+  .testi-role{font-size:11px;color:var(--text-light);}
+  .stars{color:#ffb800;font-size:12px;margin-bottom:4px;}
+
+  /* ── CENTRES ── */
+  .centres-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .centre-card{background:#fff;border-radius:var(--radius);padding:20px;border:1.5px solid #e8ecf8;transition:all .25s;}
+  .centre-card:hover{box-shadow:var(--shadow-md);border-color:var(--navy);}
+  .centre-icon{font-size:24px;margin-bottom:10px;}
+  .centre-name{font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;}
+  .centre-addr{font-size:12px;color:var(--text-light);line-height:1.5;margin-bottom:10px;}
+  .centre-phone{font-size:13px;font-weight:700;color:var(--orange);text-decoration:none;}
+
+  /* ── BOTTOM CTA BAND ── */
+  .cta-band{background:linear-gradient(135deg,var(--navy),#1a3275);padding:56px 0;text-align:center;}
+  .cta-band h2{font-family:'Nunito',sans-serif;font-size:36px;font-weight:900;color:#fff;margin-bottom:10px;}
+  .cta-band p{font-size:16px;color:rgba(255,255,255,0.7);margin-bottom:28px;}
+  .cta-band-btns{display:flex;gap:14px;justify-content:center;}
+  .btn-cta-white{background:#fff;color:var(--navy);font-size:15px;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;}
+  .btn-cta-orange{background:var(--orange);color:#fff;font-size:15px;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(255,107,0,0.4);}
+
+  /* ── FLOATING WHATSAPP ── */
+  .whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:999;background:#25D366;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,0.4);text-decoration:none;font-size:26px;transition:transform .2s;}
+  .whatsapp-float:hover{transform:scale(1.1);}
+
+  /* ── STICKY BOTTOM MOBILE BAR ── */
+  .mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;background:#fff;border-top:1.5px solid #e8ecf8;padding:10px 16px;gap:10px;}
+  .mobile-cta a{flex:1;text-align:center;padding:12px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;}
+  .mobile-cta .m-call{background:var(--off-white);color:var(--navy);border:1.5px solid var(--navy);}
+  .mobile-cta .m-enq{background:var(--orange);color:#fff;}
+
+  /* ── FOOTER ── */
+  footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:48px 0 24px;}
+  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px;}
+  .footer-brand{font-family:'Nunito',sans-serif;font-size:20px;font-weight:900;color:#fff;margin-bottom:12px;}
+  .footer-desc{font-size:13px;line-height:1.6;}
+  .footer-col h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.05em;}
+  .footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;margin-bottom:7px;transition:color .2s;}
+  .footer-col a:hover{color:var(--yellow);}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:12px;}
+
+  /* ── FORM MODAL ── */
+  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,31,92,0.6);z-index:2000;align-items:center;justify-content:center;backdrop-filter:blur(4px);}
+  .modal-overlay.open{display:flex;}
+  .modal{background:#fff;border-radius:var(--radius-lg);padding:32px;width:100%;max-width:420px;position:relative;animation:modalIn .3s ease;}
+  @keyframes modalIn{from{opacity:0;transform:scale(0.95) translateY(20px);}to{opacity:1;transform:none;}}
+  .modal-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--text-light);}
+  .modal-title{font-family:'Nunito',sans-serif;font-size:22px;font-weight:900;color:var(--navy);margin-bottom:4px;}
+  .modal-sub{font-size:13px;color:var(--text-light);margin-bottom:20px;}
+
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr;padding:32px 20px;}
+    .hero-form{display:none;}
+    .hero-title{font-size:32px;}
+    .courses-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .toppers-grid{grid-template-columns:repeat(3,1fr);}
+    .testimonials-grid{grid-template-columns:1fr;}
+    .centres-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .mobile-cta{display:flex;}
+    body{padding-bottom:70px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="header-top">
+  🎉 <span>KCET 2025 Results:</span> 6 Students in Top 50 | 24 in Top 100 &nbsp;|&nbsp; <span>New batch starting June 15</span> — Limited seats!
+</div>
+
+<!-- STICKY HEADER -->
+<header class="header">
+  <div class="header-main">
+    <a href="#" class="logo">
+      <div class="logo-icon">EIIT</div>
+      <div class="logo-text">ELITE IIT<span>Bangalore's Top Coaching</span></div>
+    </a>
+    <nav>
+      <a href="#courses" class="active">Courses</a>
+      <a href="#results">Results</a>
+      <a href="#faculty">Faculty</a>
+      <a href="#centres">Centres</a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:+918050016859" class="btn-call">📞 +91 80500 16859</a>
+      <button class="btn-primary" onclick="openModal()">Book Free Class</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">Bangalore's #1 Coaching Institute</div>
+      <h1 class="hero-title">Crack <span>JEE, NEET &</span><br/>CET with Confidence</h1>
+      <p class="hero-subtitle">Expert faculty, personalized coaching, and proven results across all competitive exams — online and offline in Bangalore.</p>
+      <div class="hero-bullets">
+        <div class="hero-bullet">Expert faculty with 10+ years experience</div>
+        <div class="hero-bullet">Live interactive classes + recorded sessions</div>
+        <div class="hero-bullet">Weekly mock tests with performance analysis</div>
+        <div class="hero-bullet">4 centres across Bangalore</div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">5000+</div><div class="hero-stat-lbl">Students Coached</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-lbl">Years of Excellence</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-lbl">Bangalore Centres</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">95%</div><div class="hero-stat-lbl">Success Rate</div></div>
+      </div>
+      <div class="hero-actions">
+        <button class="btn-hero-primary" onclick="openModal()">Book Free Demo Class</button>
+        <a href="tel:+918050016859" class="btn-hero-secondary">📞 Call Now</a>
+      </div>
+    </div>
+
+    <!-- ENQUIRY FORM -->
+    <div class="hero-form">
+      <div class="form-title">Start Your Success Journey</div>
+      <div class="form-subtitle">Fill in your details — we'll call you within 30 minutes</div>
+      <div class="form-group">
+        <label>Student's Name *</label>
+        <input type="text" placeholder="Enter full name"/>
+      </div>
+      <div class="form-group">
+        <label>Mobile Number *</label>
+        <input type="tel" placeholder="+91 XXXXX XXXXX"/>
+      </div>
+      <div class="form-group">
+        <label>Course Interested In *</label>
+        <select>
+          <option value="">Select a course</option>
+          <option>IIT JEE (Main + Advanced)</option>
+          <option>NEET / Medical</option>
+          <option>CET / Karnataka</option>
+          <option>Class 11-12 Coaching</option>
+          <option>Class 6-10 / Foundation</option>
+          <option>CA / CS / CMA</option>
+          <option>UPSC / KPSC</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Preferred Centre</label>
+        <select>
+          <option value="">Select centre</option>
+          <option>Jayanagar</option>
+          <option>Koramangala</option>
+          <option>Malleshwaram</option>
+          <option>Yelahanka</option>
+          <option>Online</option>
+        </select>
+      </div>
+      <button class="form-submit" onclick="alert('Thank you! We will call you shortly.')">Get Free Counselling →</button>
+      <div class="form-note">🔒 Your data is safe. <span>No spam, ever.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPPERS STRIP -->
+<div class="toppers-strip">
+  <div class="toppers-inner">
+    <div class="toppers-title">🏅 Our Recent Toppers — KCET & JEE 2025</div>
+    <div class="toppers-row">
+      <div class="topper-chip"><div class="topper-avatar">AT</div><div class="topper-info"><div class="topper-name">Ananya T.</div><div class="topper-rank">KCET Rank 9</div></div></div>
+      <div class="topper-chip"><div class="topper-avatar">RK</div><div class="topper-info"><div class="topper-name">Rahul K.</div><div class="topper-rank">KCET Rank 15</div></div></div>
+      <div class="topper-chip"><div class="topper-avatar">PS</div><div class="topper-info"><div class="topper-name">Priya S.</div><div class="topper-rank">KCET Rank 42</div></div></div>
+      <div class="topper-chip"><div class="topper-avatar">MN</div><div class="topper-info"><div class="topper-name">Madan N.</div><div class="topper-rank">KCET Rank 73</div></div></div>
+      <div class="topper-chip"><div class="topper-avatar">VB</div><div class="topper-info"><div class="topper-name">Varsha B.</div><div class="topper-rank">KCET Rank 132</div></div></div>
+      <div class="topper-chip"><div class="topper-avatar">SR</div><div class="topper-info"><div class="topper-name">Suresh R.</div><div class="topper-rank">KCET Rank 21</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item"><span class="trust-icon">🎓</span><div><div class="trust-num">5000+</div><div class="trust-lbl">Students Coached</div></div></div>
+      <div class="trust-item"><span class="trust-icon">🏆</span><div><div class="trust-num">500+</div><div class="trust-lbl">JEE / NEET Qualifiers</div></div></div>
+      <div class="trust-item"><span class="trust-icon">👨‍🏫</span><div><div class="trust-num">30+</div><div class="trust-lbl">Expert Faculty</div></div></div>
+      <div class="trust-item"><span class="trust-icon">📍</span><div><div class="trust-num">4</div><div class="trust-lbl">Bangalore Centres</div></div></div>
+      <div class="trust-item"><span class="trust-icon">⭐</span><div><div class="trust-num">4.8/5</div><div class="trust-lbl">Student Rating</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- COURSES -->
+<section class="section" id="courses">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">All Courses</div>
+      <h2 class="section-title">What Would You Like to Crack?</h2>
+      <p class="section-subtitle">From school subjects to top competitive exams — we cover everything with expert faculty.</p>
+    </div>
+    <div class="courses-grid">
+      <div class="course-card" onclick="openModal()">
+        <div class="course-icon" style="background:#fff3e0;">⚗️</div>
+        <div class="course-name">IIT JEE</div>
+        <div class="course-desc">Main + Advanced. Expert PCM faculty with IIT/NIT backgrounds.</div>
+        <a href="#" class="course-link">Know more</a>
+      </div>
+      <div class="course-card" onclick="openModal()">
+        <div class="course-icon" style="background:#e8f5e9;">🧬</div>
+        <div class="course-name">NEET</div>
+        <div class="course-desc">Biology, Physics & Chemistry. Trusted by 1000+ NEET aspirants.</div>
+        <a href="#" class="course-link">Know more</a>
+      </div>
+      <div class="course-card" onclick="openModal()">
+        <div class="course-icon" style="background:#e3f2fd;">📐</div>
+        <div class="course-name">CET / DCET</div>
+        <div class="course-desc">Karnataka CET coaching with dedicated batch schedule.</div>
+        <a href="#" class="course-link">Know more</a>
+      </div>
+      <div class="course-card" onclick="openModal()">
+        <div class="course-icon" style="background:#fce4ec;">📚</div>
+        <div class="course-name">Class 11 & 12</div>
+        <div class="course-desc">Board + entrance prep. Science and Commerce streams.</div>
+        <a href="#" class="course-link">Know more</a>
+      </div>
+      <div class="course-card" onclick="openModal()">
+        <div class="course-icon" style="background:#ede7f6;">🔢</div>
+        <div class="course-name">Foundation (6–10)</div>
+        <div class="course-desc">Build strong concepts early. Maths & Science focus.</div>
+        <a href="#" class="course-link">Know more</a>
+      </div>
+      <div class="course-card" onclick="openModal()">
+        <div class="course-icon" style="background:#e0f7fa;">💼</div>
+        <div class="course-name">CA / CS / CMA</div>
+        <div class="course-desc">Professional commerce exams from Foundation to Final.</div>
+        <a href="#" class="course-link">Know more</a>
+      </div>
+      <div class="course-card" onclick="openModal()">
+        <div class="course-icon" style="background:#fff8e1;">🏛️</div>
+        <div class="course-name">UPSC / KPSC</div>
+        <div class="course-desc">Civil services coaching by experienced mentors.</div>
+        <a href="#" class="course-link">Know more</a>
+      </div>
+      <div class="course-card" onclick="openModal()">
+        <div class="course-icon" style="background:#f3e5f5;">🌐</div>
+        <div class="course-name">GRE / GMAT / SAT</div>
+        <div class="course-desc">International exams for study abroad aspirants.</div>
+        <a href="#" class="course-link">Know more</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ELITE IIT -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Why Elite IIT</div>
+      <h2 class="section-title">What Makes Us Different</h2>
+      <p class="section-subtitle">From every other coaching centre in Bangalore</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-num">01</div><div class="why-title">Small Batches — 15 Students Max</div><div class="why-desc">Every student gets personal attention. No one gets left behind in a crowd of 100.</div></div>
+      <div class="why-card"><div class="why-num">02</div><div class="why-title">Faculty with 10+ Years Experience</div><div class="why-desc">Our teachers have guided thousands of students to top ranks in JEE, NEET and KCET.</div></div>
+      <div class="why-card"><div class="why-num">03</div><div class="why-title">Personalised Study Plan</div><div class="why-desc">Your plan is built around your strengths, weaknesses, and target exam date.</div></div>
+      <div class="why-card"><div class="why-num">04</div><div class="why-title">Weekly Mock Tests + Analysis</div><div class="why-desc">Real exam simulation every week. Detailed performance reports to track improvement.</div></div>
+      <div class="why-card"><div class="why-num">05</div><div class="why-title">Doubt Solving Every Day</div><div class="why-desc">Walk-in doubt sessions 6 days a week. No doubt goes unanswered.</div></div>
+      <div class="why-card"><div class="why-num">06</div><div class="why-title">Online + Offline — Your Choice</div><div class="why-desc">Attend in person at any of our 4 centres, or join live online from anywhere.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPPERS / RESULTS -->
+<section class="section" id="results">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Our Results</div>
+      <h2 class="section-title">Students Who Made It</h2>
+      <p class="section-subtitle">Real students, real ranks — from our Bangalore centres</p>
+    </div>
+    <div class="toppers-grid">
+      <div class="topper-card"><div class="topper-photo">AT</div><div class="topper-card-name">Ananya Tiwari</div><div class="topper-card-exam">KCET 2025</div><div class="topper-card-rank">Rank 9</div></div>
+      <div class="topper-card"><div class="topper-photo">RK</div><div class="topper-card-name">Rahul Kumar</div><div class="topper-card-exam">KCET 2025</div><div class="topper-card-rank">Rank 15</div></div>
+      <div class="topper-card"><div class="topper-photo">PS</div><div class="topper-card-name">Priya Sharma</div><div class="topper-card-exam">KCET 2025</div><div class="topper-card-rank">Rank 42</div></div>
+      <div class="topper-card"><div class="topper-photo">MN</div><div class="topper-card-name">Madan Nair</div><div class="topper-card-exam">KCET 2025</div><div class="topper-card-rank">Rank 73</div></div>
+      <div class="topper-card"><div class="topper-photo">VB</div><div class="topper-card-name">Varsha Bhat</div><div class="topper-card-exam">KCET 2025</div><div class="topper-card-rank">Rank 132</div></div>
+    </div>
+    <div style="text-align:center;margin-top:28px;">
+      <a href="#" style="display:inline-block;border:2px solid var(--navy);color:var(--navy);font-size:14px;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;">View All Results →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Student Stories</div>
+      <h2 class="section-title">What Our Students Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card"><div class="stars">★★★★★</div><div class="testi-quote">"</div><div class="testi-text">Elite IIT's small batch size made all the difference. My teacher knew exactly where I was struggling and gave me a specific plan. Cleared NEET in my first attempt.</div><div class="testi-author"><div class="testi-avatar">SR</div><div><div class="testi-name">Sridevi R. — Mother</div><div class="testi-role">Daughter cleared NEET 2025</div></div></div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><div class="testi-quote">"</div><div class="testi-text">I joined the JEE batch at Koramangala just 6 months before the exam. The mock tests and doubt sessions gave me so much confidence. Got into NIT Surathkal.</div><div class="testi-author"><div class="testi-avatar">AB</div><div><div class="testi-name">Ashok B. — Parent</div><div class="testi-role">Son cleared JEE Main 2025</div></div></div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><div class="testi-quote">"</div><div class="testi-text">The concepts are explained so clearly, even difficult topics feel easy. The faculty genuinely cares. I improved from 60% to 94% in just 3 months.</div><div class="testi-author"><div class="testi-avatar">IS</div><div><div class="testi-name">Ismail S. — Student</div><div class="testi-role">Class 12, Malleshwaram Centre</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CENTRES -->
+<section class="section" id="centres">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Our Centres</div>
+      <h2 class="section-title">Find Us in Bangalore</h2>
+      <p class="section-subtitle">Walk in for a free demo class at any centre near you</p>
+    </div>
+    <div class="centres-grid">
+      <div class="centre-card"><div class="centre-icon">📍</div><div class="centre-name">Jayanagar</div><div class="centre-addr">63, 41st Cross, 2nd Main Rd, 8th Block, Jayanagar, Bengaluru 560082</div><a href="tel:+918050506333" class="centre-phone">+91 80505 06333</a></div>
+      <div class="centre-card"><div class="centre-icon">📍</div><div class="centre-name">Koramangala</div><div class="centre-addr">No 5, Krishna Nagar, Koramangala, Hosur Main Road, Bengaluru 560029</div><a href="tel:+917760763337" class="centre-phone">+91 77607 63337</a></div>
+      <div class="centre-card"><div class="centre-icon">📍</div><div class="centre-name">Malleshwaram</div><div class="centre-addr">282, Sampige Rd, 18th Cross, Malleshwaram, Bengaluru 560003</div><a href="tel:+917795400014" class="centre-phone">+91 77954 00014</a></div>
+      <div class="centre-card"><div class="centre-icon">📍</div><div class="centre-name">Yelahanka</div><div class="centre-addr">2040, HIG, 1st Main Rd, Yelahanka Satellite Town, Bengaluru 560064</div><a href="tel:+919880043200" class="centre-phone">+91 98800 43200</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready to Start Your Journey?</h2>
+    <p>Book a free demo class today — no commitment, no payment required.</p>
+    <div class="cta-band-btns">
+      <button class="btn-cta-orange" onclick="openModal()">Book Free Demo Class</button>
+      <a href="tel:+918050016859" class="btn-cta-white">📞 Call Us Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">ELITE IIT</div>
+        <div class="footer-desc">Bangalore's trusted coaching institute for JEE, NEET, CET and 25+ competitive exams. Online and offline classes available.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <a href="#">IIT JEE Coaching</a>
+        <a href="#">NEET Coaching</a>
+        <a href="#">CET Coaching</a>
+        <a href="#">Class 11 & 12</a>
+        <a href="#">CA / CS / CMA</a>
+        <a href="#">UPSC / KPSC</a>
+      </div>
+      <div class="footer-col">
+        <h4>Centres</h4>
+        <a href="#">Jayanagar</a>
+        <a href="#">Koramangala</a>
+        <a href="#">Malleshwaram</a>
+        <a href="#">Yelahanka</a>
+        <a href="#">Online Classes</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+918050016859">+91 80500 16859</a>
+        <a href="#">WhatsApp Us</a>
+        <a href="#">Our Results</a>
+        <a href="#">Blog</a>
+        <a href="#">Gallery</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Elite IIT. All rights reserved.</span>
+      <span>Made with ❤️ in Bangalore</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/918050016859" class="whatsapp-float" target="_blank">💬</a>
+
+<!-- MOBILE STICKY BAR -->
+<div class="mobile-cta">
+  <a href="tel:+918050016859" class="m-call">📞 Call Now</a>
+  <a href="#" class="m-enq" onclick="openModal()">Book Free Class</a>
+</div>
+
+<!-- ENQUIRY MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-title">Book Your Free Demo Class</div>
+    <div class="modal-sub">We'll call you within 30 minutes to confirm your slot.</div>
+    <div class="form-group"><label>Student's Name *</label><input type="text" placeholder="Enter full name"/></div>
+    <div class="form-group"><label>Mobile Number *</label><input type="tel" placeholder="+91 XXXXX XXXXX"/></div>
+    <div class="form-group"><label>Course Interested In *</label>
+      <select>
+        <option value="">Select a course</option>
+        <option>IIT JEE (Main + Advanced)</option>
+        <option>NEET / Medical</option>
+        <option>CET / Karnataka</option>
+        <option>Class 11-12 Coaching</option>
+        <option>Class 6-10 / Foundation</option>
+        <option>CA / CS / CMA</option>
+        <option>UPSC / KPSC</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Preferred Centre</label>
+      <select>
+        <option value="">Select centre</option>
+        <option>Jayanagar</option>
+        <option>Koramangala</option>
+        <option>Malleshwaram</option>
+        <option>Yelahanka</option>
+        <option>Online</option>
+      </select>
+    </div>
+    <button class="form-submit" onclick="alert('Thank you! We will call you shortly.')">Get Free Counselling →</button>
+    <div class="form-note">🔒 Your data is safe. <span>No spam, ever.</span></div>
+  </div>
+</div>
+
+<script>
+function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+
+// Sticky header shadow on scroll
+window.addEventListener('scroll',function(){
+  const h=document.querySelector('.header');
+  if(window.scrollY>10){h.style.boxShadow='0 4px 20px rgba(10,31,92,0.12)';}
+  else{h.style.boxShadow='0 2px 12px rgba(10,31,92,0.08)';}
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const t=document.querySelector(this.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>
